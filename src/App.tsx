@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header} from './components'
+import {Header,Nav} from './components'
 import './App.css';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       {/* Hedaer */}
       <Header />
       {/* Nav */}
+      <Nav />
       {/* Results */}
     </div>
   );
