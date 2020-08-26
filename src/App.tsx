@@ -1,19 +1,23 @@
-import React from 'react';
-import {Header,Nav, Results} from './components'
+import React, { useState } from 'react';
+import { Header, Nav, Results } from './components';
 import './App.css';
+import requests from './request';
 
 function App() {
-  return (
-    <div className="app">
-      
-      {/* Hedaer */}
-      <Header />
-      {/* Nav */}
-      <Nav />
-      {/* Results */}
-      <Results/>
-    </div>
-  );
+	const [
+		selectedOption,
+		setSelectedOption
+	] = useState(requests.fetchTrending);
+	return (
+		<div className="app">
+			{/* Hedaer */}
+			<Header />
+			{/* Nav */}
+			<Nav setSelectedOption={setSelectedOption} />
+			{/* Results */}
+			<Results selectedOption={selectedOption} />
+		</div>
+	);
 }
 
 export default App;

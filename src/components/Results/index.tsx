@@ -1,34 +1,37 @@
-import React, { ReactElement, useState } from 'react'
-import axios from '../../axios'
-import './Results.css'
-import VideoCard from './VideoCard/'
-import requests from '../../request'
+import React, { ReactElement, useState } from 'react';
+import axios from '../../axios';
+import './Results.css';
+import VideoCard from './VideoCard/';
+import FlipMove from 'react-flip-move'
 interface Props {
-  
+	selectedOption: string;
 }
 
-function Results({}: Props): ReactElement {
-  const [movies, setMovies] = useState([])
+function Results({ selectedOption }: Props): ReactElement {
+	const [
+		movies,
+		setMovies
+	] = useState([]);
 
-  React.useEffect(()=> {
- const fetchData = async () => {
-  const response = await axios.get(requests.fetchActionMovies);
-  setMovies(response.data.results)
-  return response;
+	React.useEffect(
+		() => {
+			const fetchData = async () => {
+				const response = await axios.get(selectedOption);
+				setMovies(response.data.results);
+				return response;
+			};
+			fetchData();
+		},
+		[
+			selectedOption
+		]
+	);
 
+	return <div className="results">
+<FlipMove>
+{movies.map((movie, index) => <VideoCard key={index} movie={movie} />)}
+</FlipMove>
+    </div>;
 }
-fetchData();
- 
-  }, [])
 
-  return (
-    <div className='results'>
-      {movies.map((movie) => (
-         <VideoCard movie={movie} />
-      ))}
-     
-    </div>
-  )
-}
-
-export default Results
+export default Results;

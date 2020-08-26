@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { forwardRef } from 'react';
 import './VideoCard.css';
 import { ThumbUpSharp } from '@material-ui/icons';
 var TextTruncate = require('react-text-truncate');
@@ -19,9 +19,12 @@ interface Props {
 	};
 }
 
-function VideoCard({ movie }: Props): ReactElement {
+
+
+
+const VideoCard = forwardRef<HTMLDivElement, Props>( ({ movie }: Props,ref) => {
 	return (
-		<div className="videocard">
+		<div ref={ref} className="videocard">
 			<img src={`${base_url}${movie.backdrop_path || movie.poster_path}`} alt="movie" />
 			<TextTruncate line={2} element="p" truncateText="..." text={movie.overview} />
 
@@ -29,10 +32,12 @@ function VideoCard({ movie }: Props): ReactElement {
 			<p className="videocard__stats">
 				{movie.media_type && `${movie.media_type} .`}
 				{movie.release_date || movie.first_air_date} .
-				<ThumbUpSharp />   {movie.vote_count}
+				<ThumbUpSharp /> {movie.vote_count}
 			</p>
 		</div>
 	);
-}
+})
+
+
 
 export default VideoCard;
