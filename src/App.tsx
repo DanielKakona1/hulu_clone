@@ -1,0 +1,21 @@
+import React from 'react';
+import Header from './Header'
+import './App.css';
+
+function App() {
+  return (
+    <div className="app">
+      
+      {/* Hedaer */}
+      <Header />
+      {/* Nav */}
+      {/* Results */}
+    </div>
+  );
+}
+
+export default App;
+/* 
+1e388a8bd3d3cc0179ba2398f9712002
+
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZTM4OGE4YmQzZDNjYzAxNzliYTIzOThmOTcxMjAwMiIsInN1YiI6IjVmNDYxYTdiNzFmMDk1MDAzMzgxMDViZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.37Z0uOZQXCDirdd_6BsMSBcMLRaHZAfCl6H54JMfWII */
