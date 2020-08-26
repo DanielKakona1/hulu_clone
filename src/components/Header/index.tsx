@@ -46,7 +46,7 @@ const Header = (props: Props) => {
 
            </div> 
            <img 
-           src={require('./assets/hulu.png')}
+           src={require('../../assets/hulu.png')}
            alt='hulu_logo'
            />
         </div>

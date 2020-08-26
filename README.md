@@ -1,4 +1,4 @@
-#Hulu_clone
+## Hulu_clone
 Hulu_clone is a clone of the Hulu system.
 
 ## 🚀 Techs
