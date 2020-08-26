@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header,Nav} from './components'
+import {Header,Nav, Results} from './components'
 import './App.css';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       {/* Nav */}
       <Nav />
       {/* Results */}
+      <Results/>
     </div>
   );
 }
