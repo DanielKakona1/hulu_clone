@@ -14,4 +14,8 @@ Hulu_clone is a clone of the Hulu system.
 1. Clone the repo;
 2. Run `cd Hulu_Clone` to open the cloned repo;
 3. Run `yarn install` to install the dependecies;
-4. Run `ysrn start` to run the system;
+4. Run `yarn start` to run the system;
+
+
+## 🔥 Demo
+https://hulu-clone-32259.web.app/
